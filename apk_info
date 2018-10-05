@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+set -u
+
+: ${ADB:=adb}
+
+"$ADB" shell pm list packages | awk -F \: '{ print $2 }'

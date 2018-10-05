@@ -6,4 +6,5 @@ all:	install
 
 install:
 	install -t "${PREFIX}/${BINDIR}" apk_delete
+	install -t "${PREFIX}/${BINDIR}" apk_info
 .PHONY:	install
