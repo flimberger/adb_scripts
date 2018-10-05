@@ -20,7 +20,7 @@ then
 	exit 1
 fi
 
-for i in $packages
+for pkg in $packages
 do
-	"$ADB" shell pm uninstall $(echo $i | sed 's/^package://') >/dev/null
+	"$ADB" shell pm uninstall $(echo $pkg | sed 's/^package://') >/dev/null || echo "failed to remove $pkg" >&2
 done
